@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { listBg } from "./data";
+import { colorList, ColorSet } from "./data";
 
 export default function Home() {
-  const [bg, setBG] = useState(listBg[9].backgroundColor);
-  const [bgButton, setBGButton] = useState(listBg[9].buttonColor);
-  const [fontColor, setFontColor] = useState(listBg[9].textColor);
+  const [backgroundColor, setBG] = useState(colorList[9].backgroundColor);
+  const [backgroundColorButton, setBGButton] = useState(colorList[9].buttonColor);
+  const [textColor, setFontColor] = useState(colorList[9].textColor);
 
   const [effect, setEffect] = useState(false);
 
@@ -18,18 +18,18 @@ export default function Home() {
   };
 
   const getNewColor = () => {
-    let newColor;
+    let newColor: ColorSet;
     do {
-      newColor = listBg[Math.floor(Math.random() * listBg.length)];
-    } while (newColor.backgroundColor === bg);
+      newColor = colorList[Math.floor(Math.random() * colorList.length)];
+    } while (newColor.backgroundColor === backgroundColor);
     return newColor;
   };
 
   return (
-    <div className={`${bg} h-screen flex justify-center items-center`}>
+    <div className={`${backgroundColor} h-screen flex justify-center items-center`}>
       <button
         id="haha"
-        className={`${bgButton} ${fontColor} border-4 p-2 h-16 w-64 tracking-widest rounded-full font-bold text-xl  ${
+        className={`${backgroundColorButton} ${textColor} border-4 p-2 h-16 w-64 tracking-widest rounded-full font-bold text-xl  ${
           effect && "animate-side2side"
         }`}
         onClick={() => setEffect(true)}

@@ -1,4 +1,4 @@
-export const listBg = [
+export const colorList = [
   {
     backgroundColor: "bg-red-500",
     buttonColor: "bg-blue-500",
@@ -50,3 +50,9 @@ export const listBg = [
     textColor: "text-gray-900",
   },
 ];
+
+export interface ColorSet {
+  backgroundColor: string;
+  buttonColor: string;
+  textColor: string;
+}
