@@ -20,6 +20,7 @@ module.exports = {
       },
       animation: {
         side2side: "side2side 200ms ease-in-out",
+        ping2: "ping 750ms cubic-bezier(0, 0, 0.2, 1) 1",
       },
     },
   },
